@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <title ng-bind="title">JsSDK</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="wxapp">
+<div id="iframediv"></div>
+<ion-nav-view></ion-nav-view>
+<div class="top" style="display: none"><a href="javascript:void(0)" class="button button-outline" ng-click="scrollTop($event)"><i class="icon ion-ios7-arrow-thin-up"></i>TOP</a></div>
+<ion-footer-bar ng-show="['home','category','userIndex','goods'].indexOf(qmState.current.name) !== -1">
+<div class="tabs-striped">
+    <div class="tabs tabs-icon-top">
+        <a href="#/home" class="tab-item" ng-class="{active: qmState.current.name === 'home'}"><i class="icon icon-tab-home"></i>首页</a>
+        <a href="#/category" class="tab-item" ng-class="{active: qmState.current.name === 'category'}"><i class="icon icon-tab-list"></i>分类</a>
+        <a href="#/cart" class="tab-item" ng-class="{active: qmState.current.name === 'cart'}"><i class="icon icon-tab-cart"></i>购物车</a>
+        <a href="#/user_index" class="tab-item" ng-class="{active: qmState.current.name === 'userIndex'}">
+            <i class="icon icon-tab-mine"></i>我的
+            <span class="badge badge-assertive" ng-if="loginUser.orderCount"></span>
+        </a>
+    </div>
+</div>
+</ion-footer-bar>
+<script type="text/javascript" src="js/service/wxservice.js"></script>
+</body>
+</html>
