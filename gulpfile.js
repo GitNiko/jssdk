@@ -17,7 +17,7 @@ var replace = require('gulp-replace');
 var jshint = require('gulp-jshint');
 // lint report tool
 var stylish = require('jshint-stylish');
-var config = require('./config.json');
+//var config = require('./config.json');
 var argv = require('yargs').argv;
 // unit test
 var karma = require('karma').server;
